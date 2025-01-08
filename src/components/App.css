@@ -1,0 +1,111 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Brush Script MT", cursive;
+}
+
+.main-container {
+  font-family: "Brush Script MT", cursive;
+  background-color: #f8fafc;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-header {
+  background-color: #bcccdc;
+  height: 75px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.notepad-container {
+  background-color: #d9eafd;
+  width: 450px;
+  height: 600px;
+  margin-top: 75px;
+  border-radius: 7.5%;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notepad-header {
+  background-color: #bcccdc;
+  height: 50px;
+  width: 400px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.list-form {
+  margin-top: 15px;
+}
+
+/* List Styling */
+.task-list {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.task-list.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15px;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Each list item */
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.list-item span {
+  flex: 1;
+  margin-right: 15px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.list-item button {
+  background-color: #d9a0a1;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.list-item button:hover {
+  background-color: #ff6164;
+}
