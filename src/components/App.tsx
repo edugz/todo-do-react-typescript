@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
 import { v4 as uuidv4 } from "uuid";
+import ListItem from "./ListItem";
+
+export interface TodoItem {
+  id: string;
+  name: string;
+}
 
 function App() {
-  interface TodoItem {
-    id: string;
-    name: string;
-  }
-
   const [items, setItems] = useState<TodoItem[]>([]);
+  const [userInput, setUserInput] = useState<string>("");
 
   const addItem = (userInput: string) => {
     const newItem = { id: uuidv4(), name: userInput };
@@ -16,8 +18,6 @@ function App() {
       return [...prevItems, newItem];
     });
   };
-
-  const [userInput, setUserInput] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
@@ -56,20 +56,7 @@ function App() {
             <button type="submit">Add</button>
           </form>
         </div>
-        <div className={`task-list ${items.length === 0 ? "empty" : ""}`}>
-          {items.length === 0 ? (
-            <div> No pending tasks!</div>
-          ) : (
-            <ul>
-              {items.map((item) => (
-                <li className="list-item" key={item.id}>
-                  <span>{item.name}</span>
-                  <button onClick={() => deleteItem(item.id)}>Delete</button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <ListItem items={items} deleteItem={deleteItem} />
       </div>
     </div>
   );
